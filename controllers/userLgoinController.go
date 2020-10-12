@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"DataCertProject/models"
+	"fmt"
 	"github.com/astaxie/beego"
 )
 
@@ -28,7 +29,7 @@ func (l *LoginController) Post() {
 	u, err := user.QueryUser()
 	if err != nil {
 		l.Ctx.WriteString("抱歉，用户登录失败，请重试！")
-		return
+		fmt.Println(err.Error())
 	}
 	//  登录成功,跳转项目核心功能页面（home.html）
 	l.Data["Phone"] = u.Phone

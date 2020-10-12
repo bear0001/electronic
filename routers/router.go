@@ -10,12 +10,13 @@ import (
 func init() {
 	beego.Router("/", &controllers.MainController{})
 
-//    用户注册的请求接口
-beego.Router("/user_register", &controllers.RegisterController{})
+	//    用户注册的请求接口
+	beego.Router("/user_register", &controllers.RegisterController{})
 
-//    直接登录的页面请求接口
-beego.Router("/login.html", &controllers.LoginController{})
+	//    直接登录的页面请求接口
+	beego.Router("/login.html", &controllers.LoginController{})
 
-//    用户登录请求接口
-beego.Router("/user_login", &controllers.LoginController{})
+	//    用户登录请求接口
+	beego.Router("/user_login", &controllers.LoginController{})
+
 }

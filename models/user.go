@@ -34,6 +34,11 @@ func (u User) SaverUser() (int64, error) {
 }
 
 func (u User) QueryUser() (*User, error) {
+	hashMd5 := md5.New()
+	hashMd5.Write([]byte(u.Password))
+	byte := hashMd5.Sum(nil)
+	u.Password = hex.EncodeToString(byte)
+
 	row := db_mysql.Db.QueryRow("select phone from user where phone = ? and  password=?",
 		u.Phone, u.Password)
 

@@ -26,6 +26,6 @@ func (r *RegisterController) Post()  {
 		 return
 	 }
 //	 用户注册成功
-       r.TplName="login.html"
+       r.TplName= "login.html"
 }
 
